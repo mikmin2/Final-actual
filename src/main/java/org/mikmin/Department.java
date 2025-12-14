@@ -19,7 +19,7 @@ public class Department {
     public Department(String departmentName) {
         if (isDepartmentNameValid(departmentName)) {
             this.departmentId = String.format("D%2d", nextId++);
-            this.departmentName = departmentName;
+            this.departmentName = Util.toTitleCase(departmentName);
         }
         this.departmentId = null;
         this.departmentName = null;

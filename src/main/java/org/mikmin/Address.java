@@ -34,7 +34,7 @@ public class Address {
     }
 
     /**
-     * Checks if a given postal code is valid
+     * Checks if a given postal code is valid (in CDCDCD form, where C's are letters and D's are digits)
      * @param postalCode input postal code
      * @return the validity of the postal code
      */

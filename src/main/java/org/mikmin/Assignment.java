@@ -35,6 +35,10 @@ public class Assignment {
                 '}';
     }
 
+    /**
+     * calculates the average of the assignment based on its current scores
+     * @return the average
+     */
     public double calcAssignmentAvg() {
         double total = 0;
         for (int score : scores){
@@ -44,6 +48,9 @@ public class Assignment {
         return total / scores.toArray().length;
     }
 
+    /**
+     * generates random scores for each slot within the assignment
+     */
     public void generateRandomScore() {
         Random random = new Random();
 

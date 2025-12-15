@@ -31,6 +31,10 @@ public class Course {
         this.registeredStudents = new ArrayList<>();
     }
 
+    /**
+     * a simplified version of toString that the Student class uses inorder to not create a infinite loop of calling
+     * @return the simplified string
+     */
     public String toSimplifiedString() {
         return "Course{" +
                 "courseId='" + courseId + '\'' +
@@ -52,6 +56,11 @@ public class Course {
                 '}';
     }
 
+    /**
+     * registers a student into the registeredStudents Array list
+     * @param student the student to be registered
+     * @return if the registration was successful
+     */
     public boolean registerStudent(Student student) {
         if (student.getRegisteredCourses().contains(this)) {
             return false;
@@ -68,6 +77,10 @@ public class Course {
         return true;
     }
 
+    /**
+     * checks if the assignment weight of all the assignments totals to 100%
+     * @return the validity of the assignment weight
+     */
     public boolean isAssignmentWeightValid() {
         double totalWeight = 0;
 
@@ -78,6 +91,12 @@ public class Course {
         return (totalWeight == 100);
     }
 
+    /**
+     * adds an assignment to the assignments list of the course
+     * @param str the name of the assignment
+     * @param weight the weight of the assignment
+     * @return if the addition was successful
+     */
     public boolean addAssignment(String str, double weight) {
         if (str == null || str.isEmpty() || weight < 0 || weight > 100) {
             return false;
@@ -88,6 +107,10 @@ public class Course {
         return true;
     }
 
+    /**
+     * calculates the student average of every student registered in the course
+     * @return an int array of the averages of the students
+     */
     public int[] calcStudentAverage() {
         int[] ints = new int[registeredStudents.size()];
 
@@ -104,12 +127,18 @@ public class Course {
         return ints;
     }
 
+    /**
+     * generates random scores for every assignment
+     */
     public void generateScores() {
         for (Assignment assignment : assignments) {
             assignment.generateRandomScore();
         }
     }
 
+    /**
+     * prints the program, the students and their scores for each assignment, as well as all their final averages
+     */
     public void displayScores() {
         int[] ints = calcStudentAverage();
 

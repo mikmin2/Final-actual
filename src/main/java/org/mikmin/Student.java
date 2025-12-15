@@ -32,6 +32,10 @@ public class Student {
         this.registeredCourses = new ArrayList<>();
     }
 
+    /**
+     * a simplified version of toString that the Course class uses inorder to not create a infinite loop of calling
+     * @return the simplified string
+     */
     public String toSimplifiedString() {
         return "Student{" +
                 "studentId='" + studentId + '\'' +
@@ -52,6 +56,11 @@ public class Student {
                 '}';
     }
 
+    /**
+     * registers a course into the student's registeredCourses Array list
+     * @param course the course to be register
+     * @return if the registration was successful
+     */
     public boolean registerCourse(Course course) {
         if (course.getRegisteredStudents().contains(this)) {
             return false;
@@ -68,6 +77,11 @@ public class Student {
         return true;
     }
 
+    /**
+     * removes the specified course from the course list of the student
+     * @param course the course to be removed
+     * @return if the removal was successful
+     */
     public boolean dropCourse(Course course) {
         if (!course.getRegisteredStudents().contains(this)) {
             return false;

@@ -2,6 +2,11 @@ package org.mikmin;
 
 public class Util {
 
+    /**
+     * converts a given string to title case
+     * @param str input string
+     * @return input string now in title case
+     */
     public static String toTitleCase(String str) {
         String titledStr = "";
 

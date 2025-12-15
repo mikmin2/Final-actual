@@ -22,7 +22,7 @@ public class Course {
     private static int nextId = 0;
 
     public Course(String courseName, double credits, Department department) {
-        this.courseId = String.format("C-%s-%2d", department.getDepartmentId(), nextId++);
+        this.courseId = String.format("C-%s-%02d", department.getDepartmentId(), nextId++);
         this.courseName = courseName;
         this.credits = credits;
         this.department = department;

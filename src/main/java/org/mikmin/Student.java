@@ -24,7 +24,7 @@ public class Student {
     private static int nextId = 1;
 
     public Student(String studentName, Gender gender, Address address, Department department) {
-        this.studentId = String.format("%6d", nextId++);
+        this.studentId = String.format("%06d", nextId++);
         this.studentName = Util.toTitleCase(studentName);
         this.gender = gender;
         this.address = address;

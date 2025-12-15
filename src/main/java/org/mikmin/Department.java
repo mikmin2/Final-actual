@@ -18,11 +18,12 @@ public class Department {
 
     public Department(String departmentName) {
         if (isDepartmentNameValid(departmentName)) {
-            this.departmentId = String.format("D%2d", nextId++);
+            this.departmentId = String.format("D%02d", nextId++);
             this.departmentName = Util.toTitleCase(departmentName);
+        } else {
+            this.departmentId = null;
+            this.departmentName = null;
         }
-        this.departmentId = null;
-        this.departmentName = null;
     }
 
     /**

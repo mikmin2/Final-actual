@@ -24,13 +24,14 @@ public class Address {
             this.city = city;
             this.province = province;
             this.postalCode = postalCode;
-        }
+        } else {
 
-        this.streetNo = 0;
-        this.street = null;
-        this.city = null;
-        this.province = null;
-        this.postalCode = null;
+            this.streetNo = 0;
+            this.street = null;
+            this.city = null;
+            this.province = null;
+            this.postalCode = null;
+        }
     }
 
     /**

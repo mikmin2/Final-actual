@@ -68,6 +68,18 @@ public class Student {
         return true;
     }
 
+    public boolean dropCourse(Course course) {
+        if (!course.getRegisteredStudents().contains(this)) {
+            return false;
+        }
+
+        registeredCourses.remove(course);
+
+        course.getRegisteredStudents().remove(this);
+
+        return true;
+    }
+
     public enum Gender{
         MALE,
         FEMALE,

@@ -46,7 +46,8 @@ public class Assignment {
 
     public void generateRandomScore() {
         Random random = new Random();
-        for (int i = 0; i <= scores.size(); i++) {
+
+        for (int i = 0; i < scores.size(); i++) {
             int scoreBracket = random.nextInt(0,11);
 
             scores.set(i,
